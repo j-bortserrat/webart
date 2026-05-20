@@ -126,28 +126,63 @@
 
   .form-section {
     border-top: 1px solid var(--line);
-    padding: 50px 0;
   }
+  .form-section[open]:last-of-type { border-bottom: 1px solid var(--line); }
+  .form-section-header {
+    list-style: none;
+    cursor: pointer;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: padding 0.25s ease;
+  }
+  .form-section-header::-webkit-details-marker { display: none; }
+  .form-section[open] .form-section-header { padding-bottom: 14px; }
+  .form-section-header:hover .form-section-title { color: var(--coral); }
+  .form-section-header-text { flex: 1; min-width: 0; }
   .form-section-num {
     font-family: var(--serif);
     font-style: italic;
     color: var(--coral);
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.1em;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
   }
   .form-section-title {
     font-family: var(--serif);
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 400;
-    line-height: 1.1;
-    margin: 0 0 8px;
+    line-height: 1.15;
+    margin: 0;
     letter-spacing: -0.02em;
+    transition: color 0.25s;
   }
+  .form-section-toggle {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    transition: all 0.3s;
+  }
+  .form-section-toggle svg { width: 14px; height: 14px; transition: transform 0.3s; }
+  .form-section[open] .form-section-toggle {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: white;
+  }
+  .form-section[open] .form-section-toggle svg { transform: rotate(45deg); }
+  .form-section-body { padding: 8px 0 40px; }
   .form-section-desc {
     font-size: 14px;
     color: var(--ink-light);
-    margin-bottom: 32px;
+    margin: 0 0 32px;
   }
 
   .field { margin-bottom: 26px; }
@@ -334,20 +369,52 @@
     min-height: 18px;
   }
 
-  @media (max-width: 640px){
-    .top-bar { padding: 16px 20px; }
-    .hero, .form-wrap { padding-left: 20px; padding-right: 20px; }
-    .hero { padding-top: 60px; }
-    .form-section { padding: 38px 0; }
-    .form-section-title { font-size: 26px; }
+  @media (max-width: 768px){
+    .top-bar { padding: 14px 18px; }
+    .top-logo { font-size: 17px; }
+    .top-back { font-size: 11px; }
+    .hero { padding: 50px 18px 30px; }
+    .hero-label { margin-bottom: 18px; font-size: 11px; }
+    .hero-title { font-size: clamp(34px, 9vw, 56px); margin-bottom: 22px; }
+    .hero-intro { font-size: 15px; line-height: 1.55; }
+    .hero-time { font-size: 12px; margin-top: 18px; }
+    .form-wrap { padding: 10px 18px 70px; }
+    .form-section-header { padding: 20px 0; gap: 14px; }
+    .form-section[open] .form-section-header { padding-bottom: 10px; }
+    .form-section-title { font-size: 21px; line-height: 1.18; }
+    .form-section-num { font-size: 12px; }
+    .form-section-toggle { width: 32px; height: 32px; }
+    .form-section-toggle svg { width: 12px; height: 12px; }
+    .form-section-body { padding: 4px 0 30px; }
+    .form-section-desc { font-size: 13px; margin-bottom: 22px; }
+    .field { margin-bottom: 20px; }
+    label { font-size: 11px; margin-bottom: 8px; }
+    input, textarea, select { padding: 12px 14px; font-size: 14px; }
+    textarea { min-height: 90px; }
+    .chip span { padding: 9px 14px; font-size: 12px; }
+    .chips { gap: 8px; }
+    .submit-row { flex-direction: column; align-items: stretch; gap: 16px; margin-top: 36px; }
+    .submit-note { font-size: 12px; max-width: none; }
+    .submit-btn { width: 100%; justify-content: center; padding: 16px 28px; font-size: 13px; }
+    .consent { font-size: 12px; }
+    .file-drop { padding: 22px 16px; }
+    .file-drop-icon { width: 34px; height: 34px; }
+    .file-drop-text { font-size: 13px; }
+    .file-drop-hint { font-size: 11px; }
+  }
+  @media (max-width: 480px){
+    .hero { padding-top: 40px; }
+    .form-section-title { font-size: 19px; }
+    .top-bar { padding: 12px 14px; }
+    .hero, .form-wrap { padding-left: 14px; padding-right: 14px; }
   }
 </style>
 </head>
 <body>
 
 <header class="top-bar">
-  <a href="web-wertical-studio.html" class="top-logo">Wertical<span>·</span>Studio</a>
-  <a href="web-wertical-studio.html" class="top-back">
+  <a href="index.html" class="top-logo">Wertical<span>·</span>Studio</a>
+  <a href="index.html" class="top-back">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
     Volver
   </a>
@@ -374,9 +441,17 @@
     <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" />
 
     <!-- ─── 01 · Tú ─────────────────────────────── -->
-    <section class="form-section">
-      <div class="form-section-num">— 01 / Tú</div>
-      <h2 class="form-section-title">Quién está detrás del proyecto.</h2>
+    <details class="form-section" name="briefing" open>
+      <summary class="form-section-header">
+        <div class="form-section-header-text">
+          <div class="form-section-num">— 01 / Tú</div>
+          <h2 class="form-section-title">Quién está detrás del proyecto.</h2>
+        </div>
+        <div class="form-section-toggle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="9" x2="12" y2="15"/><line x1="18" y1="9" x2="12" y2="15"/></svg>
+        </div>
+      </summary>
+      <div class="form-section-body">
       <p class="form-section-desc">Lo básico para poder responderte.</p>
 
       <div class="field-row">
@@ -410,12 +485,21 @@
           <label class="chip"><input type="checkbox" name="Canal preferido" value="Presencial" /><span>Reunión presencial</span></label>
         </div>
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- ─── 02 · Tu negocio ─────────────────────── -->
-    <section class="form-section">
-      <div class="form-section-num">— 02 / Tu negocio</div>
-      <h2 class="form-section-title">Háblanos de tu negocio.</h2>
+    <details class="form-section" name="briefing">
+      <summary class="form-section-header">
+        <div class="form-section-header-text">
+          <div class="form-section-num">— 02 / Tu negocio</div>
+          <h2 class="form-section-title">Háblanos de tu negocio.</h2>
+        </div>
+        <div class="form-section-toggle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="9" x2="12" y2="15"/><line x1="18" y1="9" x2="12" y2="15"/></svg>
+        </div>
+      </summary>
+      <div class="form-section-body">
       <p class="form-section-desc">Esto nos ayuda a entender qué necesita realmente tu web.</p>
 
       <div class="field">
@@ -424,12 +508,12 @@
       </div>
 
       <div class="field">
-        <label for="descripcion">¿A qué se dedica tu negocio?</label>
-        <textarea id="descripcion" name="Descripción del negocio" required placeholder="Cuéntanos qué hacéis, qué ofrecéis, qué os hace diferentes..."></textarea>
+        <label for="descripcion">¿A qué se dedica tu negocio? <span class="opt">(opcional)</span></label>
+        <textarea id="descripcion" name="Descripción del negocio" placeholder="Cuéntanos qué hacéis, qué ofrecéis, qué os hace diferentes..."></textarea>
       </div>
 
       <div class="field">
-        <label for="publico">¿A quién te diriges?</label>
+        <label for="publico">¿A quién te diriges? <span class="opt">(opcional)</span></label>
         <textarea id="publico" name="Público objetivo" placeholder="Describe brevemente al cliente ideal: edad, intereses, qué busca..."></textarea>
       </div>
 
@@ -443,12 +527,21 @@
           <input type="text" id="redes" name="Redes sociales" placeholder="@usuario, @usuario..." />
         </div>
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- ─── 03 · Proyecto ───────────────────────── -->
-    <section class="form-section">
-      <div class="form-section-num">— 03 / El proyecto</div>
-      <h2 class="form-section-title">Qué necesitas.</h2>
+    <details class="form-section" name="briefing">
+      <summary class="form-section-header">
+        <div class="form-section-header-text">
+          <div class="form-section-num">— 03 / El proyecto</div>
+          <h2 class="form-section-title">Qué necesitas.</h2>
+        </div>
+        <div class="form-section-toggle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="9" x2="12" y2="15"/><line x1="18" y1="9" x2="12" y2="15"/></svg>
+        </div>
+      </summary>
+      <div class="form-section-body">
       <p class="form-section-desc">Selecciona todo lo que aplique.</p>
 
       <div class="field">
@@ -462,20 +555,29 @@
       </div>
 
       <div class="field">
-        <label for="objetivo">Objetivo principal de la web</label>
-        <textarea id="objetivo" name="Objetivo principal" required placeholder="Ej. vender online, captar clientes, dar a conocer la marca, gestionar reservas, etc."></textarea>
+        <label for="objetivo">Objetivo principal de la web <span class="opt">(opcional)</span></label>
+        <textarea id="objetivo" name="Objetivo principal" placeholder="Ej. vender online, captar clientes, dar a conocer la marca, gestionar reservas, etc."></textarea>
       </div>
 
       <div class="field">
         <label for="paginas">Páginas o secciones que necesitas <span class="opt">(opcional)</span></label>
         <input type="text" id="paginas" name="Páginas/Secciones" placeholder="Inicio, Servicios, Sobre nosotros, Contacto, Blog..." />
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- ─── 04 · Estética ───────────────────────── -->
-    <section class="form-section">
-      <div class="form-section-num">— 04 / Estética</div>
-      <h2 class="form-section-title">Cómo quieres que se sienta.</h2>
+    <details class="form-section" name="briefing">
+      <summary class="form-section-header">
+        <div class="form-section-header-text">
+          <div class="form-section-num">— 04 / Estética</div>
+          <h2 class="form-section-title">Cómo quieres que se sienta.</h2>
+        </div>
+        <div class="form-section-toggle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="9" x2="12" y2="15"/><line x1="18" y1="9" x2="12" y2="15"/></svg>
+        </div>
+      </summary>
+      <div class="form-section-body">
       <p class="form-section-desc">Estilo, colores, referencias. Cuanto más concreto, mejor.</p>
 
       <div class="field">
@@ -521,7 +623,8 @@
           <div class="file-drop-files" id="fileNames"></div>
         </label>
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- ─── Submit ──────────────────────────────── -->
     <div class="consent">
@@ -545,6 +648,7 @@
 </div>
 
 <script>
+  // File names display
   const fileInput = document.getElementById('archivos');
   const fileNames = document.getElementById('fileNames');
   if (fileInput && fileNames) {
@@ -555,6 +659,19 @@
         ? `✓ ${files[0].name}`
         : `✓ ${files.length} archivos seleccionados`;
     });
+  }
+
+  // Abrir todas las secciones si hay errores al validar
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('invalid', (e) => {
+      document.querySelectorAll('details.form-section').forEach(d => d.open = true);
+      // Scroll al primer campo inválido
+      const invalid = e.target;
+      if (invalid && typeof invalid.scrollIntoView === 'function') {
+        setTimeout(() => invalid.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+      }
+    }, true);
   }
 </script>
 

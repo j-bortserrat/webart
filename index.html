@@ -427,6 +427,41 @@
     .about-grid { grid-template-columns: 1fr; gap: 50px; }
   }
 
+  /* ─── SECTION DIVIDER ─────────────────── */
+  .section-opener {
+    max-width: 1240px;
+    margin: 0 auto 60px;
+    position: relative;
+    text-align: center;
+    padding: 0;
+    z-index: 2;
+  }
+  .section-opener::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--line);
+  }
+  .section-opener span {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--coral);
+    line-height: 1;
+    background: var(--bg);
+  }
+  .services .section-opener span { background: var(--bg-alt); }
+  .contact .section-opener span { background: var(--bg-alt); }
+  @media (max-width: 768px){
+    .section-opener { margin-bottom: 40px; }
+    .section-opener span { font-size: 18px; padding: 0 14px; }
+  }
+
   /* ─── MARQUEE ─────────────────────────── */
   .marquee-section {
     padding: 30px 0;
@@ -1066,83 +1101,88 @@
   /* ─── PASE MÓVIL COMPACTO ─────────────── */
   @media (max-width: 768px){
     /* Nav */
-    .nav, .nav.scrolled { padding: 14px 20px; }
-    .nav-logo { font-size: 18px; }
+    .nav, .nav.scrolled { padding: 12px 18px; }
+    .nav-logo { font-size: 16px; }
 
     /* Hero */
-    .hero { padding: 100px 22px 50px; min-height: auto; }
-    .hero-marker { margin-bottom: 24px; font-size: 11px; }
-    .hero-marker::before { width: 24px; }
-    .hero-title { font-size: clamp(42px, 11vw, 64px); margin-bottom: 28px; }
-    .hero-bottom { margin-top: 32px; gap: 24px; }
-    .hero-lead { font-size: 16px; }
-    .hero-meta { font-size: 12px; }
+    .hero { padding: 84px 20px 40px; min-height: auto; }
+    .hero-marker { margin-bottom: 20px; font-size: 10px; letter-spacing: 0.12em; }
+    .hero-marker::before { width: 20px; }
+    .hero-title { font-size: clamp(38px, 10vw, 56px); margin-bottom: 24px; line-height: 1; }
+    .hero-bottom { margin-top: 26px; gap: 20px; }
+    .hero-lead { font-size: 15px; line-height: 1.5; }
+    .hero-meta { font-size: 11px; }
+    .hero-meta div { line-height: 1.8; }
 
     /* Sections */
-    .section { padding: 70px 22px; }
-    .section-label { font-size: 11px; margin-bottom: 20px; }
-    .section-title { font-size: clamp(30px, 8vw, 44px); margin-bottom: 36px; }
+    .section { padding: 56px 20px; }
+    .section-label { font-size: 10px; margin-bottom: 16px; letter-spacing: 0.16em; }
+    .section-label::before { font-size: 14px; }
+    .section-title { font-size: clamp(28px, 8vw, 40px); margin-bottom: 28px; line-height: 1.1; }
 
-    /* About stats */
-    .about-grid { gap: 36px; }
-    .about-stats { padding: 36px 0; gap: 22px; }
+    /* Section divider */
+    .section-opener { margin-bottom: 32px; }
+    .section-opener span { font-size: 16px; padding: 0 12px; }
 
     /* Services */
-    .services .section-inner { }
     .service-item {
-      padding: 30px 0;
-      gap: 8px;
+      padding: 24px 0;
+      gap: 6px;
     }
-    .service-name { font-size: 24px; }
-    .service-desc { font-size: 15px; line-height: 1.55; }
-    .service-num { font-size: 11px; }
+    .service-name { font-size: 22px; line-height: 1.1; }
+    .service-desc { font-size: 14px; line-height: 1.55; }
+    .service-num { font-size: 10px; letter-spacing: 0.14em; }
+    .service-item:hover { padding-left: 0; }
 
     /* Portfolio */
-    .portfolio-intro { margin-bottom: 44px; gap: 24px; }
-    .portfolio-intro-text { font-size: 15px; }
-    .projects { gap: 16px; }
-    .project, .project:nth-child(even) { padding: 16px 0; gap: 22px; }
-    .project-title { font-size: clamp(28px, 7vw, 38px); }
-    .project-num { font-size: 13px; margin-bottom: 12px; }
-    .project-desc { font-size: 15px; margin-bottom: 22px; }
-    .project-tags { margin-bottom: 22px; gap: 8px; }
-    .project-tag { padding: 5px 11px; font-size: 10px; }
-    .project-link, .project-link-soon { font-size: 12px; }
+    .portfolio-intro { margin-bottom: 32px; gap: 18px; }
+    .portfolio-intro-text { font-size: 14px; }
+    .projects { gap: 8px; }
+    .project, .project:nth-child(even) { padding: 12px 0; gap: 18px; }
+    .project-title { font-size: clamp(24px, 6.5vw, 34px); line-height: 1.05; }
+    .project-num { font-size: 12px; margin-bottom: 10px; }
+    .project-desc { font-size: 14px; margin-bottom: 18px; line-height: 1.55; }
+    .project-tags { margin-bottom: 18px; gap: 6px; }
+    .project-tag { padding: 4px 10px; font-size: 9px; letter-spacing: 0.12em; }
+    .project-link, .project-link-soon { font-size: 11px; letter-spacing: 0.12em; }
 
     /* Contact */
-    .contact { padding: 70px 22px; }
-    .contact-inner { gap: 36px; }
-    .contact-title { font-size: clamp(36px, 9vw, 56px); margin-bottom: 28px; }
-    .contact-lead { font-size: 16px; margin-bottom: 32px; }
-    .contact-cta { padding: 18px 32px; font-size: 13px; }
-    .contact-info { gap: 26px; padding-top: 8px; }
-    .contact-block-value { font-size: 19px; }
+    .contact { padding: 56px 20px; }
+    .contact-inner { gap: 28px; }
+    .contact-title { font-size: clamp(32px, 9vw, 50px); margin-bottom: 22px; line-height: 1.02; }
+    .contact-lead { font-size: 15px; margin-bottom: 26px; line-height: 1.55; }
+    .contact-cta { padding: 16px 28px; font-size: 12px; }
+    .contact-info { gap: 22px; padding-top: 6px; }
+    .contact-block-label { font-size: 10px; }
+    .contact-block-value { font-size: 17px; }
 
     /* Footer */
-    .footer { padding: 40px 22px 30px; }
-    .footer-inner { gap: 16px; }
-    .footer-logo { font-size: 16px; }
-    .footer-copy { font-size: 11px; }
-    .footer-legal { font-size: 11px; }
+    .footer { padding: 32px 20px 24px; }
+    .footer-inner { gap: 14px; }
+    .footer-logo { font-size: 15px; }
+    .footer-copy { font-size: 10px; letter-spacing: 0.08em; }
+    .footer-legal { font-size: 10px; }
 
     /* Marquee */
-    .marquee-track { gap: 22px; }
+    .marquee-section { padding: 18px 0; }
+    .marquee-track { gap: 18px; }
   }
 
   @media (max-width: 480px){
-    .hero { padding: 90px 18px 40px; }
-    .section { padding: 56px 18px; }
-    .contact { padding: 56px 18px; }
-    .hero-title { font-size: 42px; line-height: 1; }
-    .section-title { font-size: 28px; line-height: 1.1; }
-    .contact-title { font-size: 36px; line-height: 1.02; }
-    .service-name { font-size: 22px; }
-    .project-title { font-size: 26px; }
-    .nav-logo { font-size: 16px; }
-    .nav, .nav.scrolled { padding: 12px 18px; }
-    .stat-num { font-size: 48px; }
-    .footer { padding: 36px 18px 26px; }
-    .marquee-section { padding: 18px 0; }
+    .hero { padding: 74px 16px 32px; }
+    .section { padding: 44px 16px; }
+    .contact { padding: 44px 16px; }
+    .hero-title { font-size: 36px; }
+    .section-title { font-size: 26px; }
+    .contact-title { font-size: 30px; }
+    .service-name { font-size: 19px; }
+    .service-item { padding: 20px 0; }
+    .project-title { font-size: 22px; }
+    .nav-logo { font-size: 14px; }
+    .nav, .nav.scrolled { padding: 10px 14px; }
+    .footer { padding: 28px 16px 22px; }
+    .marquee-section { padding: 14px 0; }
+    .section-opener { margin-bottom: 24px; }
   }
 </style>
 </head>
@@ -1221,6 +1261,7 @@
 
 <!-- ─── SERVICIOS ────────────────────────────────── -->
 <section class="section services" id="servicios">
+  <div class="section-opener" aria-hidden="true"><span>·</span></div>
   <div class="section-inner">
     <div class="section-label reveal" data-num="01">— Lo que hacemos</div>
     <h2 class="section-title reveal">
@@ -1265,6 +1306,7 @@
 
 <!-- ─── PORTFOLIO ────────────────────────────────── -->
 <section class="section portfolio" id="trabajos">
+  <div class="section-opener" aria-hidden="true"><span>·</span></div>
   <div class="section-inner">
     <div class="section-label reveal" data-num="02">— Trabajos seleccionados</div>
     <div class="portfolio-intro">
@@ -1359,6 +1401,7 @@
 <!-- ─── CONTACTO ─────────────────────────────────── -->
 <section class="contact" id="contacto">
   <div class="contact-decoration"></div>
+  <div class="section-opener" aria-hidden="true" style="margin-bottom:50px;"><span>·</span></div>
   <div class="contact-inner">
     <div>
       <div class="section-label reveal" data-num="03">— Contacto</div>
@@ -1388,7 +1431,7 @@
         <div class="contact-block-label">Teléfono</div>
         <div class="contact-block-value">
           <a href="tel:+34651413489">+34 651 413 489</a>
-          <span style="color:var(--ink-light);"> · </span>
+          <span style="color:var(--ink-light);"> / </span>
           <a href="tel:+34659463296">+34 659 463 296</a>
         </div>
       </div>
