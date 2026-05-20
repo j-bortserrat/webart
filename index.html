@@ -771,7 +771,8 @@
   }
   @media (max-width: 880px){
     .project, .project:nth-child(even) { grid-template-columns: 1fr; gap: 30px; }
-    .project:nth-child(even) .project-info { order: 0; }
+    .project .project-visual { order: 1; }
+    .project .project-info, .project:nth-child(even) .project-info { order: 2; }
   }
 
   /* ─── PROCESO ─────────────────────────── */
@@ -1192,11 +1193,11 @@
 
 <!-- ─── NAV ──────────────────────────────────────── -->
 <nav class="nav" id="nav">
-  <a href="#top" class="nav-logo">Wertical<span>·</span>Studio</a>
+  <a href="index.html" class="nav-logo">Wertical<span>·</span>Studio</a>
   <div class="nav-links" id="navLinks">
-    <a href="#servicios">Servicios</a>
-    <a href="#trabajos">Trabajos</a>
-    <a href="#contacto" class="nav-cta">Hablemos</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="trabajos.html">Trabajos</a>
+    <a href="briefing.html" class="nav-cta">Hablemos</a>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
 </nav>
@@ -1362,7 +1363,7 @@
             <span class="project-tag project-tag-dev">◐ En desarrollo</span>
           </div>
           <a href="https://huevosdecolores.com" target="_blank" rel="noopener" class="project-link">
-            Ver proyecto en vivo
+            Ver avance
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>

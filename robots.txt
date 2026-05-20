@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /briefing.html
+Disallow: /kit-digital.html
+Disallow: /gracias.html
+Disallow: /firma-gmail.html
+
+Sitemap: https://werticalstudio.com/sitemap.xml

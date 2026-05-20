@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kit Digital — qué fue y qué queda del programa · Wertical Studio</title>
+<meta name="description" content="El Kit Digital cerró convocatorias en oct/2025. Resumen del programa, importes históricos y qué queda de cara a una posible reactivación." />
+<meta name="robots" content="noindex,follow" />
+<link rel="canonical" href="https://werticalstudio.com/kit-digital.html" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="Wertical Studio" />
+<meta property="og:title" content="Kit Digital — qué fue y qué queda del programa · Wertical Studio" />
+<meta property="og:description" content="El programa cerró convocatorias en oct/2025. Página de referencia con importes históricos y estado actual." />
+<meta property="og:url" content="https://werticalstudio.com/kit-digital.html" />
+<meta property="og:image" content="https://werticalstudio.com/assets/og-image.svg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Kit Digital — qué fue y qué queda · Wertical Studio" />
+<meta name="twitter:description" content="Resumen del Kit Digital, programa cerrado en oct/2025, y nuestra posición de cara a una posible reactivación." />
+<meta name="twitter:image" content="https://werticalstudio.com/assets/og-image.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg: #fafaf7;
+    --bg-alt: #f1efe8;
+    --ink: #2d1b4e;
+    --ink-soft: #4a3a6b;
+    --ink-light: #564a72;
+    --coral: #ff6b6b;
+    --line: #e2dccc;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--coral); color: #fff; }
+
+  /* NAV (unified) */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 22px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: all 0.4s ease;
+  }
+  .nav.scrolled {
+    background: rgba(250, 250, 247, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 40px;
+  }
+  .nav-logo { font-family: var(--serif); font-weight: 500; font-style: italic; font-size: 22px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--coral); }
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links a {
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 500; position: relative; transition: color 0.3s;
+    color: var(--ink); text-decoration: none;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--coral);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--coral); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a.active { color: var(--coral); }
+  .nav-links a.active::after { width: 100%; }
+  .nav-cta {
+    padding: 10px 22px; border: 1.5px solid var(--ink); border-radius: 100px;
+    font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+    font-weight: 500; transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--ink); color: var(--bg); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: inherit; }
+  @media (max-width: 880px){
+    .nav, .nav.scrolled { padding: 16px 22px; }
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .nav-links.open {
+      display: flex; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; background: var(--bg);
+      padding: 30px 22px; gap: 20px; border-bottom: 1px solid var(--line);
+    }
+  }
+
+  /* Agente badge */
+  .agente-badge {
+    max-width: 900px; margin: 0 auto;
+    padding: 30px 40px 0;
+  }
+  .agente-badge-inner {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 10px 18px;
+    background: rgba(255, 107, 107, 0.08);
+    border: 1px solid rgba(255, 107, 107, 0.25);
+    border-radius: 100px;
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 600; color: var(--coral);
+  }
+  .agente-badge-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--coral);
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.18);
+    animation: badgePulse 2s ease-in-out infinite;
+  }
+  @keyframes badgePulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.18); }
+    50% { box-shadow: 0 0 0 8px rgba(255, 107, 107, 0.05); }
+  }
+
+  /* Hero */
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 40px 60px;
+  }
+  .hero-label {
+    font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--coral); font-weight: 600;
+    margin-bottom: 24px; display: inline-flex; align-items: center; gap: 14px;
+  }
+  .hero-label::before { content: ""; width: 36px; height: 1px; background: var(--coral); }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -.025em;
+    margin: 0 0 28px;
+  }
+  .hero-title em { font-style: italic; color: var(--coral); }
+  .hero-intro {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 700px;
+  }
+
+  /* Container */
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 40px 100px; }
+
+  /* Section */
+  .section { padding: 40px 0; }
+  .section-num {
+    font-family: var(--serif); font-style: italic; color: var(--coral); font-size: 14px;
+    letter-spacing: .1em; margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400; line-height: 1.1; letter-spacing: -.02em;
+    margin: 0 0 24px;
+  }
+
+  p, li { color: var(--ink-soft); font-size: 16px; }
+  p { margin: 0 0 16px; }
+  ul { padding-left: 22px; margin: 0 0 20px; }
+  li { margin-bottom: 8px; }
+  a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
+  a:hover { color: var(--coral); }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Highlight box */
+  .info-box {
+    background: var(--bg-alt);
+    border-left: 3px solid var(--coral);
+    border-radius: 4px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .info-box p:last-child { margin-bottom: 0; }
+  .info-box strong { color: var(--ink); }
+
+  /* Placeholder */
+  .placeholder {
+    background: #fff5e6;
+    border: 1px dashed #d4a64a;
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: #8a6420;
+    font-size: 13px;
+    margin: 16px 0;
+  }
+  .placeholder strong { color: #5a4310; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 540px; }
+  th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  th { background: var(--bg-alt); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+  td { color: var(--ink-soft); }
+  td.amount { font-family: var(--serif); font-size: 18px; color: var(--ink); font-weight: 500; }
+
+  /* CTA */
+  .cta-box {
+    margin-top: 48px;
+    padding: 40px;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 8px;
+    text-align: center;
+  }
+  .cta-box h3 {
+    font-family: var(--serif); font-size: 28px; font-weight: 400; margin: 0 0 12px;
+    color: var(--bg);
+  }
+  .cta-box h3 em { font-style: italic; color: var(--coral); }
+  .cta-box p { color: rgba(250, 250, 247, 0.75); margin-bottom: 28px; font-size: 16px; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 32px; background: var(--coral); color: var(--bg);
+    border-radius: 100px; text-decoration: none;
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600;
+    transition: all .3s;
+  }
+  .cta-btn:hover { background: white; color: var(--ink); transform: translateY(-2px); }
+  .cta-btn svg { width: 14px; height: 14px; }
+
+  /* Mobile */
+  @media (max-width: 640px){
+    .hero, .container, .agente-badge { padding-left: 20px; padding-right: 20px; }
+    .hero { padding-top: 20px; padding-bottom: 30px; }
+    .container { padding-bottom: 70px; }
+    .section { padding: 28px 0; }
+    .cta-box { padding: 30px 22px; }
+    .agente-badge { padding-top: 110px; }
+  }
+
+  /* Spacing for fixed nav */
+  body { padding-top: 90px; }
+  @media (max-width: 640px){ body { padding-top: 70px; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">Wertical<span>·</span>Studio</a>
+  <div class="nav-links" id="navLinks">
+    <a href="servicios.html">Servicios</a>
+    <a href="trabajos.html">Trabajos</a>
+    <a href="briefing.html" class="nav-cta">Hablemos</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+</nav>
+
+<div class="agente-badge">
+  <div class="agente-badge-inner">
+    <span class="agente-badge-dot" aria-hidden="true"></span>
+    Programa cerrado · Información de referencia
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-label">Ayudas públicas · Histórico</div>
+  <h1 class="hero-title">Kit <em>Digital</em>: qué fue y qué queda del programa.</h1>
+  <p class="hero-intro">
+    El Kit Digital fue un programa de ayudas del Gobierno de España, financiado con fondos
+    europeos Next Generation EU, que ayudó a más de 850.000 negocios a digitalizarse
+    entre 2022 y 2025. <strong>Las convocatorias se cerraron el 31 de octubre de 2025</strong> y,
+    a fecha de hoy, no hay previsión oficial de reapertura. Esta página recoge la información
+    de referencia y nuestra posición de cara a una posible reactivación.
+  </p>
+</section>
+
+<main class="container">
+
+  <!-- 00 Estado actual del programa -->
+  <section class="section">
+    <div class="section-num">— 00</div>
+    <h2 class="section-title">Estado actual del programa</h2>
+
+    <div class="placeholder" style="background:#fdebeb;border-color:#e94f4f;color:#8a2020;">
+      <strong>⚠ Convocatorias cerradas</strong> — Red.es confirma a fecha de mayo de 2026 que
+      <em>"todas las convocatorias de Kit Digital ya están cerradas y no existe previsión de apertura
+      de ninguna de ellas ni de convocatorias nuevas"</em>.
+    </div>
+
+    <p>
+      Esto es lo que ha ocurrido, en resumen:
+    </p>
+    <ul>
+      <li><strong>Febrero 2022</strong> — arranca el Kit Digital con la primera convocatoria (Segmento I).</li>
+      <li><strong>2022 – 2025</strong> — se abren progresivamente convocatorias para todos los segmentos (I–V) y se amplían plazos.</li>
+      <li><strong>31 de octubre de 2025</strong> — se cierran las dos últimas convocatorias que quedaban abiertas. Fin del periodo de solicitudes.</li>
+      <li><strong>28 de enero de 2026</strong> — el BOE publica la Orden TDF/39/2026, que elimina la limitación temporal rígida del programa. Técnicamente, abre la puerta a una posible reactivación, pero <strong>no la activa</strong>.</li>
+      <li><strong>Mayo de 2026</strong> — la administración está en fase de ejecución y control: gestión de justificaciones, pagos a Agentes y cierre administrativo. <strong>No hay convocatorias abiertas</strong>.</li>
+    </ul>
+
+    <p>
+      Balance: el programa concedió ayudas a unos <strong>850.000 negocios</strong> por más de
+      <strong>3.400 millones de euros</strong>. Es uno de los mayores programas de digitalización
+      de pymes ejecutados en España.
+    </p>
+  </section>
+
+  <!-- 01 ¿Qué fue? -->
+  <section class="section">
+    <div class="section-num">— 01</div>
+    <h2 class="section-title">¿Qué era el Kit Digital?</h2>
+    <p>
+      Una iniciativa del <strong>Ministerio para la Transformación Digital y de la Función Pública</strong>
+      (anteriormente Ministerio de Asuntos Económicos y Transformación Digital), gestionada por
+      <strong>Red.es</strong> dentro del programa <a href="https://www.acelerapyme.gob.es" target="_blank" rel="noopener">Acelera Pyme</a>.
+      Financiada por los fondos europeos <strong>Next Generation EU</strong>.
+    </p>
+    <p>
+      Su objetivo: acercar la digitalización a pymes, microempresas y autónomos repartiendo
+      <strong>bonos digitales</strong> que cubrían parte (o todo) el coste de soluciones como una
+      página web, una tienda online, gestión de redes sociales, ciberseguridad, ERP, CRM o
+      factura electrónica, entre otras categorías.
+    </p>
+  </section>
+
+  <!-- 02 ¿Quién podía solicitarlo? -->
+  <section class="section">
+    <div class="section-num">— 02</div>
+    <h2 class="section-title">¿Quién podía solicitarlo?</h2>
+    <p>
+      Mientras hubo convocatorias, cualquier <strong>pyme, microempresa o autónomo</strong> con
+      domicilio fiscal en España que cumpliera con:
+    </p>
+    <ul>
+      <li>Estar dado de alta y al corriente de obligaciones tributarias y con la Seguridad Social</li>
+      <li>No estar incurso en ninguna prohibición de las previstas en la Ley de Subvenciones</li>
+      <li>Haber realizado el <strong>autodiagnóstico digital</strong> en acelerapyme.gob.es</li>
+      <li>No tener consideración de empresa en crisis</li>
+    </ul>
+  </section>
+
+  <!-- 03 Importes históricos -->
+  <section class="section">
+    <div class="section-num">— 03</div>
+    <h2 class="section-title">Importes históricos del bono</h2>
+    <p>
+      Estos eran los importes vigentes hasta el cierre del programa (octubre 2025), agrupados
+      por segmentos según el tamaño de la empresa:
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Segmento</th><th>Tamaño</th><th>Importe del bono</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Segmento I</td><td>50 – 249 empleados</td><td class="amount">29.000 €</td></tr>
+          <tr><td>Segmento II</td><td>10 – 49 empleados</td><td class="amount">18.000 €</td></tr>
+          <tr><td>Segmento III</td><td>3 – 9 empleados</td><td class="amount">6.000 €</td></tr>
+          <tr><td>Segmento IV</td><td>1 – 2 empleados</td><td class="amount">3.000 €</td></tr>
+          <tr><td>Segmento V</td><td>Autónomos (0 empleados)</td><td class="amount">2.000 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="placeholder">
+      <strong>⚠ Importes históricos</strong> — corresponden al programa Kit Digital cerrado.
+      No son aplicables hoy ni garantizan los importes de una eventual reactivación. Fuente:
+      <a href="https://www.acelerapyme.gob.es/kit-digital" target="_blank" rel="noopener">acelerapyme.gob.es/kit-digital</a> y bases reguladoras publicadas en BOE.
+    </div>
+  </section>
+
+  <!-- 04 Para qué se podía usar -->
+  <section class="section">
+    <div class="section-num">— 04</div>
+    <h2 class="section-title">¿Para qué se podía usar?</h2>
+    <p>
+      El bono cubría un catálogo oficial de <strong>"soluciones de digitalización"</strong>.
+      Las más relevantes para los servicios que ofrecemos en Wertical Studio eran:
+    </p>
+
+    <div class="info-box">
+      <p><strong>· Sitio Web y Presencia básica en Internet</strong> — diseño y desarrollo de la página web del negocio. Importe orientativo: hasta 2.000 €.</p>
+      <p><strong>· Comercio Electrónico</strong> — creación de tienda online para vender productos o servicios. Importe orientativo: hasta 2.000 €.</p>
+      <p><strong>· Marketplace</strong> — alta y posicionamiento en plataformas como Amazon, Etsy, etc.</p>
+    </div>
+
+    <p>Otras categorías del catálogo (que nosotros no cubríamos directamente): gestión de redes sociales, ciberseguridad, factura electrónica, oficina virtual, BI/analítica, comunicaciones seguras, gestión de clientes (CRM) y gestión de procesos (ERP).</p>
+  </section>
+
+  <!-- 05 Plazos del programa -->
+  <section class="section">
+    <div class="section-num">— 05</div>
+    <h2 class="section-title">Plazos del programa</h2>
+
+    <p>
+      Mientras el programa estuvo activo, los plazos clave eran:
+    </p>
+    <ul>
+      <li><strong>Solicitud del bono:</strong> dependía de la convocatoria de tu segmento — cada una con su propia ventana.</li>
+      <li><strong>Concesión:</strong> entre 1 y 3 meses desde la solicitud, en condiciones normales.</li>
+      <li><strong>Formalización con Agente Digitalizador:</strong> 6 meses desde la concesión.</li>
+      <li><strong>Ejecución de la solución:</strong> en general, hasta 12 meses desde la firma con el Agente.</li>
+    </ul>
+
+    <p>
+      A día de hoy, con las convocatorias cerradas, estos plazos solo afectan a quien tuvo el bono
+      concedido antes del cierre y todavía esté en fase de ejecución o justificación.
+    </p>
+  </section>
+
+  <!-- 06 Si se reactiva -->
+  <section class="section">
+    <div class="section-num">— 06</div>
+    <h2 class="section-title">¿Y si se reactiva?</h2>
+    <p>
+      La Orden TDF/39/2026 deja la puerta abierta a una eventual reapertura, pero a fecha de hoy
+      ni Red.es ni Acelera Pyme han anunciado calendario alguno. Si finalmente se reactiva el
+      programa (o se lanza uno equivalente con financiación europea), el procedimiento tipo
+      seguirá siendo parecido:
+    </p>
+    <ul>
+      <li><strong>1. Autodiagnóstico digital</strong> en <a href="https://www.acelerapyme.gob.es" target="_blank" rel="noopener">acelerapyme.gob.es</a> — obligatorio.</li>
+      <li><strong>2. Solicitud del bono</strong> en la sede electrónica de Red.es con certificado digital o Cl@ve.</li>
+      <li><strong>3. Elección de Agente Digitalizador</strong> y formalización del acuerdo. El Agente cobra directamente del Gobierno.</li>
+    </ul>
+    <p>
+      Si quieres que te avisemos cuando haya novedades concretas, escríbenos y te incluimos
+      en el aviso.
+    </p>
+  </section>
+
+  <!-- 07 Nosotros como Agente -->
+  <section class="section">
+    <div class="section-num">— 07</div>
+    <h2 class="section-title">Wertical Studio y la figura del <em style="font-family:var(--serif);font-style:italic;color:var(--coral);">Agente Digitalizador</em></h2>
+    <p>
+      En Wertical Studio iniciamos el <strong>proceso de adhesión como Agente Digitalizador</strong>
+      ante Red.es con la intención de poder ejecutar directamente las soluciones del Kit Digital
+      para nuestros clientes — sin que ellos tuvieran que adelantar el coste cubierto por el bono.
+    </p>
+
+    <p>
+      Con el programa cerrado desde octubre de 2025, esa adhesión ha perdido utilidad inmediata.
+      Mantenemos la preparación técnica y administrativa hecha hasta ahora, para activarla si el
+      programa se reactiva o si se publica una ayuda equivalente con figura de agente colaborador.
+    </p>
+
+    <div class="info-box">
+      <p><strong>¿Qué hacemos mientras tanto?</strong></p>
+      <p>
+        Seguimos diseñando y desarrollando webs sin depender del Kit Digital. Si conseguiste el
+        bono antes del cierre y todavía estás en fase de ejecución, podemos ayudarte como
+        proveedor externo. Y si en el futuro se publica una nueva ayuda, te avisaremos.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>¿Tu proyecto digital, <em>con o sin ayudas</em>?</h3>
+    <p>
+      Aunque el Kit Digital esté cerrado, tu web sigue siendo posible. Cuéntanos qué necesitas
+      y te proponemos una forma concreta de hacerlo realidad.
+    </p>
+    <a href="briefing.html" class="cta-btn">
+      Hablemos de tu proyecto
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle) {
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  }
+</script>
+
+</body>
+</html>
