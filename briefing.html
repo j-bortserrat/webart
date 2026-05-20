@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Empieza tu proyecto · Wertical Studio</title>
+<meta name="description" content="Cuéntanos tu proyecto. Te proponemos una forma concreta de hacerlo realidad." />
+<meta name="robots" content="noindex,follow" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg: #fafaf7;
+    --bg-alt: #f1efe8;
+    --ink: #2d1b4e;
+    --ink-soft: #4a3a6b;
+    --ink-light: #6a5e85;
+    --coral: #ff6b6b;
+    --coral-deep: #e94f4f;
+    --line: #e2dccc;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --max: 880px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--coral); color: white; }
+
+  .top-bar {
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+  }
+  .top-logo {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .top-logo span { color: var(--coral); }
+  .top-back {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .top-back:hover { color: var(--coral); }
+
+  .hero {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 100px 40px 40px;
+  }
+  .hero-label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-label::before {
+    content: "";
+    width: 36px; height: 1px;
+    background: var(--coral);
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 6vw, 78px);
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--coral);
+  }
+  .hero-intro {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 640px;
+  }
+  .hero-time {
+    margin-top: 22px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    font-weight: 500;
+  }
+  .hero-time strong { color: var(--coral); }
+
+  .form-wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 20px 40px 100px;
+  }
+
+  .form-section {
+    border-top: 1px solid var(--line);
+    padding: 50px 0;
+  }
+  .form-section-num {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--coral);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .form-section-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  .form-section-desc {
+    font-size: 14px;
+    color: var(--ink-light);
+    margin-bottom: 32px;
+  }
+
+  .field { margin-bottom: 26px; }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  @media (max-width: 640px){
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+    .field-row .field { margin-bottom: 22px; }
+  }
+
+  label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  label .opt {
+    color: var(--ink-light);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 6px;
+    font-size: 11px;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea, select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: white;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  textarea {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.55;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--coral);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.12);
+  }
+  input::placeholder, textarea::placeholder { color: #a8a0b8; }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .chip {
+    position: relative;
+    cursor: pointer;
+  }
+  .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip span {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 1.5px solid var(--line);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    transition: all 0.25s;
+    background: white;
+  }
+  .chip:hover span { border-color: var(--coral); color: var(--coral); }
+  .chip input:checked + span {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .chip input:focus-visible + span {
+    outline: 2px solid var(--coral);
+    outline-offset: 2px;
+  }
+
+  .submit-row {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .submit-note {
+    font-size: 13px;
+    color: var(--ink-light);
+    max-width: 380px;
+    line-height: 1.55;
+  }
+  .submit-note a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 36px;
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    border-radius: 100px;
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .submit-btn:hover {
+    background: var(--coral);
+    transform: translateY(-2px);
+  }
+  .submit-btn svg { width: 16px; height: 16px; transition: transform 0.3s; }
+  .submit-btn:hover svg { transform: translateX(4px); }
+
+  .consent {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .consent input { margin-top: 4px; }
+  .consent a { color: var(--ink); text-decoration: underline; }
+
+  .honey { display: none; }
+
+  /* File upload */
+  .file-drop {
+    display: block;
+    position: relative;
+    border: 1.5px dashed var(--line);
+    border-radius: 12px;
+    padding: 28px 22px;
+    background: white;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .file-drop:hover {
+    border-color: var(--coral);
+    background: rgba(255,107,107,0.03);
+  }
+  .file-drop input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .file-drop-icon {
+    width: 40px; height: 40px;
+    margin: 0 auto 12px;
+    color: var(--coral);
+  }
+  .file-drop-text {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .file-drop-hint {
+    font-size: 12px;
+    color: var(--ink-light);
+    letter-spacing: 0.02em;
+  }
+  .file-drop-files {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--coral);
+    font-weight: 500;
+    min-height: 18px;
+  }
+
+  @media (max-width: 640px){
+    .top-bar { padding: 16px 20px; }
+    .hero, .form-wrap { padding-left: 20px; padding-right: 20px; }
+    .hero { padding-top: 60px; }
+    .form-section { padding: 38px 0; }
+    .form-section-title { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <a href="web-wertical-studio.html" class="top-logo">Wertical<span>·</span>Studio</a>
+  <a href="web-wertical-studio.html" class="top-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Volver
+  </a>
+</header>
+
+<section class="hero">
+  <div class="hero-label">Briefing del proyecto</div>
+  <h1 class="hero-title">Cuéntanos<br />tu <em>proyecto</em>.</h1>
+  <p class="hero-intro">
+    Cuanto más nos cuentes, mejor podremos prepararte una propuesta a medida antes
+    de la primera reunión. Tardarás unos 5 minutos.
+  </p>
+  <div class="hero-time">⏱ <strong>5 min</strong> · sin compromiso · respuesta en menos de 24h</div>
+</section>
+
+<div class="form-wrap">
+  <form action="https://formsubmit.co/contact@werticalstudio.com" method="POST" enctype="multipart/form-data">
+
+    <!-- FormSubmit config -->
+    <input type="hidden" name="_subject" value="Nuevo briefing · Wertical Studio" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_captcha" value="true" />
+    <input type="hidden" name="_next" value="https://werticalstudio.com/gracias.html" />
+    <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" />
+
+    <!-- ─── 01 · Tú ─────────────────────────────── -->
+    <section class="form-section">
+      <div class="form-section-num">— 01 / Tú</div>
+      <h2 class="form-section-title">Quién está detrás del proyecto.</h2>
+      <p class="form-section-desc">Lo básico para poder responderte.</p>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="Nombre" required placeholder="María García" />
+        </div>
+        <div class="field">
+          <label for="empresa">Empresa o nombre del negocio <span class="opt">(opcional)</span></label>
+          <input type="text" id="empresa" name="Empresa" placeholder="Mi Negocio S.L." />
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required placeholder="hola@ejemplo.com" />
+        </div>
+        <div class="field">
+          <label for="tel">Teléfono <span class="opt">(opcional)</span></label>
+          <input type="tel" id="tel" name="Teléfono" placeholder="+34 600 000 000" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Cómo prefieres que te contactemos</label>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="Canal preferido" value="Email" checked /><span>Email</span></label>
+          <label class="chip"><input type="checkbox" name="Canal preferido" value="Teléfono" /><span>Llamada</span></label>
+          <label class="chip"><input type="checkbox" name="Canal preferido" value="WhatsApp" /><span>WhatsApp</span></label>
+          <label class="chip"><input type="checkbox" name="Canal preferido" value="Presencial" /><span>Reunión presencial</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 02 · Tu negocio ─────────────────────── -->
+    <section class="form-section">
+      <div class="form-section-num">— 02 / Tu negocio</div>
+      <h2 class="form-section-title">Háblanos de tu negocio.</h2>
+      <p class="form-section-desc">Esto nos ayuda a entender qué necesita realmente tu web.</p>
+
+      <div class="field">
+        <label for="sector">Sector o tipo de negocio</label>
+        <input type="text" id="sector" name="Sector" required placeholder="Restaurante, clínica, comercio, freelance, etc." />
+      </div>
+
+      <div class="field">
+        <label for="descripcion">¿A qué se dedica tu negocio?</label>
+        <textarea id="descripcion" name="Descripción del negocio" required placeholder="Cuéntanos qué hacéis, qué ofrecéis, qué os hace diferentes..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="publico">¿A quién te diriges?</label>
+        <textarea id="publico" name="Público objetivo" placeholder="Describe brevemente al cliente ideal: edad, intereses, qué busca..."></textarea>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="web-actual">¿Tienes web actualmente? <span class="opt">(URL si sí)</span></label>
+          <input type="url" id="web-actual" name="Web actual" placeholder="https://..." />
+        </div>
+        <div class="field">
+          <label for="redes">Redes sociales <span class="opt">(opcional)</span></label>
+          <input type="text" id="redes" name="Redes sociales" placeholder="@usuario, @usuario..." />
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 03 · Proyecto ───────────────────────── -->
+    <section class="form-section">
+      <div class="form-section-num">— 03 / El proyecto</div>
+      <h2 class="form-section-title">Qué necesitas.</h2>
+      <p class="form-section-desc">Selecciona todo lo que aplique.</p>
+
+      <div class="field">
+        <label>Servicios que te interesan</label>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="Servicios" value="Diseño web a medida" /><span>Diseño web a medida</span></label>
+          <label class="chip"><input type="checkbox" name="Servicios" value="Rediseño de web actual" /><span>Rediseño de web actual</span></label>
+          <label class="chip"><input type="checkbox" name="Servicios" value="Mantenimiento" /><span>Mantenimiento</span></label>
+          <label class="chip"><input type="checkbox" name="Servicios" value="Consultoría" /><span>Consultoría</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="objetivo">Objetivo principal de la web</label>
+        <textarea id="objetivo" name="Objetivo principal" required placeholder="Ej. vender online, captar clientes, dar a conocer la marca, gestionar reservas, etc."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="paginas">Páginas o secciones que necesitas <span class="opt">(opcional)</span></label>
+        <input type="text" id="paginas" name="Páginas/Secciones" placeholder="Inicio, Servicios, Sobre nosotros, Contacto, Blog..." />
+      </div>
+    </section>
+
+    <!-- ─── 04 · Estética ───────────────────────── -->
+    <section class="form-section">
+      <div class="form-section-num">— 04 / Estética</div>
+      <h2 class="form-section-title">Cómo quieres que se sienta.</h2>
+      <p class="form-section-desc">Estilo, colores, referencias. Cuanto más concreto, mejor.</p>
+
+      <div class="field">
+        <label>Estilo visual que te gusta</label>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="Estilo" value="Minimalista" /><span>Minimalista</span></label>
+          <label class="chip"><input type="checkbox" name="Estilo" value="Editorial" /><span>Editorial</span></label>
+          <label class="chip"><input type="checkbox" name="Estilo" value="Vibrante" /><span>Vibrante</span></label>
+          <label class="chip"><input type="checkbox" name="Estilo" value="Oscuro" /><span>Oscuro / lujo</span></label>
+          <label class="chip"><input type="checkbox" name="Estilo" value="Corporativo" /><span>Corporativo</span></label>
+          <label class="chip"><input type="checkbox" name="Estilo" value="Artesanal" /><span>Artesanal / orgánico</span></label>
+          <label class="chip"><input type="checkbox" name="Estilo" value="Animado" /><span>Con muchas animaciones</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="referencias">Webs que te inspiran <span class="opt">(URLs, opcional)</span></label>
+        <textarea id="referencias" name="Referencias" placeholder="https://web1.com — me gusta su tipografía&#10;https://web2.com — el estilo de las animaciones"></textarea>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="colores">Colores corporativos <span class="opt">(opcional)</span></label>
+          <input type="text" id="colores" name="Colores" placeholder="#1a2b3c, verde oliva, paleta tierra..." />
+        </div>
+        <div class="field">
+          <label for="logo">¿Tienes logo / identidad? <span class="opt">(opcional)</span></label>
+          <input type="text" id="logo" name="Logo/Identidad" placeholder="Sí / No / En proceso" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Sube archivos <span class="opt">(opcional · fotos, logo, carta PDF, referencias...)</span></label>
+        <label class="file-drop" for="archivos">
+          <input type="file" id="archivos" name="attachment" multiple accept="image/*,application/pdf,.doc,.docx" />
+          <svg class="file-drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          <div class="file-drop-text">Arrastra tus archivos aquí o haz clic para subirlos</div>
+          <div class="file-drop-hint">Fotos del local, logo, carta PDF, capturas de webs que te gustan… · máx 5 archivos · 2 MB por archivo</div>
+          <div class="file-drop-files" id="fileNames"></div>
+        </label>
+      </div>
+    </section>
+
+    <!-- ─── Submit ──────────────────────────────── -->
+    <div class="consent">
+      <input type="checkbox" id="consent" required />
+      <label for="consent" style="font-size:13px; letter-spacing:0; text-transform:none; font-weight:400; color:var(--ink-soft); margin:0;">
+        He leído y acepto la <a href="privacidad.html" target="_blank">política de privacidad</a>. Mis datos serán usados solo para responder a esta consulta.
+      </label>
+    </div>
+
+    <div class="submit-row">
+      <p class="submit-note">
+        Al enviar, recibimos tu briefing y te respondemos en menos de 24 horas con una propuesta concreta y los siguientes pasos.
+      </p>
+      <button type="submit" class="submit-btn">
+        Enviar briefing
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  const fileInput = document.getElementById('archivos');
+  const fileNames = document.getElementById('fileNames');
+  if (fileInput && fileNames) {
+    fileInput.addEventListener('change', () => {
+      const files = Array.from(fileInput.files || []);
+      if (!files.length) { fileNames.textContent = ''; return; }
+      fileNames.textContent = files.length === 1
+        ? `✓ ${files[0].name}`
+        : `✓ ${files.length} archivos seleccionados`;
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>¡Gracias! · Wertical Studio</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg: #fafaf7;
+    --ink: #2d1b4e;
+    --ink-light: #6a5e85;
+    --coral: #ff6b6b;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+  }
+  .box { max-width: 640px; }
+  .check {
+    width: 80px; height: 80px;
+    margin: 0 auto 36px;
+    border-radius: 50%;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--coral);
+    animation: pop 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .check svg { width: 38px; height: 38px; }
+  @keyframes pop {
+    0% { transform: scale(0.4); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+  }
+  h1 em { font-style: italic; color: var(--coral); }
+  p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-light);
+    margin-bottom: 18px;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+    padding: 16px 32px;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 100px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .back:hover { background: var(--coral); }
+  .back svg { width: 14px; height: 14px; transition: transform 0.3s; }
+  .back:hover svg { transform: translateX(-4px); }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="label">Briefing recibido</div>
+    <h1>¡Gracias!<br />Hablamos en <em>menos de 24h</em>.</h1>
+    <p>Tu información ya está en nuestra bandeja. La revisamos con calma y te respondemos con una propuesta concreta y los siguientes pasos.</p>
+    <p style="font-size:14px; color:var(--ink-light);">Mientras tanto, si quieres comentarnos algo más, escríbenos por WhatsApp o respondiendo al email que te llegará.</p>
+    <a href="web-wertical-studio.html" class="back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Volver al inicio
+    </a>
+  </div>
+</body>
+</html>
